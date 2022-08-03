@@ -15,9 +15,9 @@ return (
 
 <HeaderContainer>
     <MainHeader>RECIPER APP</MainHeader>
-    <FormContainer>
+    <FormContainer onSubmit={submit}>
       <FoodInput type="text" name="query" placeholder='Search Food' onChange={(e)=>setQuery(e.target.value)}></FoodInput>
-      <Button type="submit" onSubmit={submit}> Search</Button>
+      <Button type="submit">  Search</Button>
       <Select onChange={(e)=>setMealType(e.target.value)}>
         <option >Breakfeast</option>
         <option >Lunch</option>

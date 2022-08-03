@@ -8,15 +8,18 @@ import {
   OtherPart,
 } from "./DetailsStyles";
 import dietSvg from "../../assets/diet.svg";
+import { useLocation } from 'react-router-dom';
 const Details = () => {
   
+const location = useLocation()
 
+const recipe = location.state.recipe1
 
 // console.log(recipe);
   return (
    
     <DetailContainer> Detail
-      {/* <HeaderContainer>
+      <HeaderContainer>
         <h1> {recipe.label}</h1>
         <img src={dietSvg} alt="" />
       </HeaderContainer>
@@ -65,7 +68,7 @@ const Details = () => {
             </div>
           ))}
         </IngredContainer>
-      </DetailPart> */}
+      </DetailPart>
     </DetailContainer>
   );
 }
