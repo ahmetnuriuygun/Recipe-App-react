@@ -1,22 +1,28 @@
-import React from "react";
-import {  Logo, Menu, MenuLink, Nav } from "./NavbarStyles";
-// import { GiHamburgerMenu } from "react-icons/gi";
+import React, {useState} from "react";
+import { Hamburger, Logo, Menu, MenuLink, Nav } from "./NavbarStyles";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
+const[acik,setAcik]=useState(false)
   return (
-   <div>
-     <Nav>
-     <Logo to="/home">
-        <i>{"<Ahmet Nuri>"}</i>
+    <Nav>
+      <Logo to="/home">
+        <i>{"<Clarusway>"}</i>
         <span>recipe</span>
       </Logo>
-       <Menu>
-         <MenuLink to="/about">About</MenuLink>
-         <a href="https://github.com" target="blank">Github</a>
-         <MenuLink to="/">Logout</MenuLink>
-       </Menu>
-     </Nav>
-   </div>
+
+      <Hamburger onClick={() => setAcik(!acik)}>
+        <GiHamburgerMenu />
+      </Hamburger>
+
+      <Menu onClick={() => setAcik(!acik)} osman={acik}>
+        <MenuLink to="/about">About</MenuLink>
+        <a href="https://github.com" target="blank">
+          Github
+        </a>
+        <MenuLink to="/">Logout</MenuLink>
+      </Menu>
+    </Nav>
   );
 };
 

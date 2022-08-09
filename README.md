@@ -1,4 +1,3 @@
-
 ## My Solution
 
-https://recipe-app-ahmetnuri.netlify.app
+https://recipe-app-ahmetnuri.netlify.app/

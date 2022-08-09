@@ -1,36 +1,36 @@
-import { getDefaultNormalizer } from '@testing-library/react'
 import React from 'react'
 import { FormContainer, HeaderContainer, MainHeader,FoodInput, Button, Select } from './HeaderStyles'
 
-const Header = ({setQuery,setMealType,getData}) => {
-
+const Header = ({setQuery,setOgun,getData}) => {
   const submit=(e)=>{
-    e.preventDefault();
+e.preventDefault();
     getData();
-}
+  }
+  
+  
+  return (
+    <HeaderContainer>
+    <MainHeader>FOOD APP</MainHeader>
+    
+    <FormContainer onSubmit={submit} >
+<FoodInput type="text" placeholder="Search"
+onChange={(e)=> setQuery(e.target.value)}/>
 
-return (
+<Button type="submit">Search</Button>
+<Select name="ögünTypes" id="ögünTypes"  onChange={(e)=> setOgun(e.target.value)}>
+<option>Breakfast</option>
+<option>Lunch</option>
 
-<div>
 
-<HeaderContainer>
-    <MainHeader>RECIPER APP</MainHeader>
-    <FormContainer onSubmit={submit}>
-      <FoodInput type="text" name="query" placeholder='Search Food' onChange={(e)=>setQuery(e.target.value)}></FoodInput>
-      <Button type="submit">  Search</Button>
-      <Select onChange={(e)=>setMealType(e.target.value)}>
-        <option >Breakfeast</option>
-        <option >Lunch</option>
-        <option >Dinner</option>
-        <option >Teatime</option>
-        <option >Snack</option>
-      </Select>
+</Select>
+
     </FormContainer>
-</HeaderContainer>
-</div>
 
+
+    </HeaderContainer>
   )
 }
+
 export default Header
 
 
